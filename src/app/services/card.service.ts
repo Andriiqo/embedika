@@ -4,27 +4,26 @@ import { Apollo, ApolloBase, gql } from 'apollo-angular';
 @Injectable({
   providedIn: 'root'
 })
-export class ListService {
+export class CardService {
+
   private apollo: ApolloBase;
 
   constructor(private apolloProvider: Apollo) {
     this.apollo = this.apolloProvider.use('list')
   }
 
-  getList(): any {
+  getCard(id: string): any {
     return this.apollo.query({
       query: gql`
-        {
-          countries {
-            code
+        query country($code: ID!) {
+          country(code: $code) {
             name
-            continent {
-              name
-            }
-            phone
           }
         }
-      `
+      `,
+      variables: {
+        code: id
+      }
     })
   }
 }

@@ -1,0 +1,24 @@
+.description {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+
+    &__value {
+        width: 300px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__name {
+        margin-right: 6.5rem;
+    }
+
+    &__info {
+        color: var(--color-form-control-active);
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+    }
+}
