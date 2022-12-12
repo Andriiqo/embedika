@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpLink } from 'apollo-angular/http';
 import { BrowserModule } from '@angular/platform-browser';
-import { ApolloModule, APOLLO_OPTIONS } from 'apollo-angular';
+import { ApolloModule, APOLLO_NAMED_OPTIONS, APOLLO_OPTIONS, NamedOptions } from 'apollo-angular';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -28,13 +28,15 @@ import { InMemoryCache } from '@apollo/client/core';
   ],
   providers: [
     {
-      provide: APOLLO_OPTIONS,
-      useFactory(httpLink: HttpLink) {
+      provide: APOLLO_NAMED_OPTIONS,
+      useFactory(httpLink: HttpLink): NamedOptions {
         return {
-          cache: new InMemoryCache(),
-          link: httpLink.create({
-            uri: 'https://countries.trevorblades.com'
-          })
+          list: {
+            cache: new InMemoryCache(),
+            link: httpLink.create({
+              uri: 'https://countries.trevorblades.com'
+            })
+          }
         }
       },
       deps: [HttpLink]

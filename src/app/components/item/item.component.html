@@ -1,1 +1,24 @@
-<p>item works!</p>
+<div class="card">
+    <div class="card__header">
+        <h3 class="card__title">{{country.name}}</h3>
+        <div class="card__arrow"></div>
+    </div>
+    <div class="card__description">
+        <div class="card__value">
+            <p class="card__name">
+                Continent
+            </p>
+            <p class="card__info">
+                {{country.continent?.name}}
+            </p>
+        </div>
+        <div class="card__value">
+            <p class="card__name">
+                Phone
+            </p>
+            <a href=tel:{{country.phone}} class="card__info">
+                +{{country.phone}}
+            </a>
+        </div>
+    </div>
+</div>

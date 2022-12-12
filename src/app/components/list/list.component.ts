@@ -1,34 +1,25 @@
 import { Component, OnInit } from '@angular/core';
-import { Apollo, gql } from 'apollo-angular';
+import { ListService } from 'src/app/services/list.service';
+import { Country } from 'src/app/types/Country.types';
 
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
-  styleUrls: ['./list.component.scss']
+  styleUrls: ['./list.component.scss'],
+  providers: [ListService],
 })
 export class ListComponent implements OnInit {
+  constructor(private listService: ListService) {}
 
-  countries: any[] | undefined
   loading = true
-  error: any
- 
-  constructor(private apollo: Apollo) {}
+  countries: Country[] = []
+  error: null | string = null
 
   ngOnInit(): void {
-    this.apollo
-      .query({
-        query: gql`
-          {
-            countries {
-              name
-            }
-          }
-        `
-      })
-      .subscribe((result: any) => {
-        this.countries = result.data.countries
-        this.loading = result.loading
-        this.error = result.error
-      })
+    this.listService.getList().subscribe(({data}: Record<string, Country[]>) => {
+      // @ts-ignore
+      this.countries = data.countries;
+      this.loading = false;
+    })
   }
 }

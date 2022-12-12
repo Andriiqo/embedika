@@ -1,10 +1,10 @@
 <div class="wrapper">
-    <main class="container main">
-        <h1>Country list</h1>
+    <main class="container list">
+        <h1 class="list__title">Country list</h1>
         <div *ngIf="loading">Loading...</div>
-        <div *ngIf="error">Error :(</div>
+        <div *ngIf="error">Error</div>
         <div *ngFor="let country of countries">
-            <p>{{country.name}}</p>
+            <app-item [country]="country"></app-item>
         </div>
     </main>
     <app-sidebar></app-sidebar>
