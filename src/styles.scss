@@ -2,7 +2,6 @@
 @import '~normalize.css';
 
 :root {
-    --padding-top: 3.375rem;
     --padding-x-large: 4rem;
     --padding-x-medium: 2rem;
     --padding-x-small: 1rem;
@@ -49,7 +48,7 @@ h3 {
 }
 
 .container {
-    padding: var(--padding-top) var(--padding-x-large) 0;
+    padding: 0 var(--padding-x-large);
     width: 100%;
     min-height: 100vh;
 }

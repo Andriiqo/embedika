@@ -1,1 +1,24 @@
-<p>{{name}}</p>
+<div class="container card">
+    <a routerLink="/" class="card__link">Вернуться</a>
+    <h1 class="card__title">{{country.name}}</h1>
+    <div class="card__info">
+        <app-table 
+            [ngStyle]="{'width': '100%', 'display':'flex', 'flex': '1 0 auto'}"
+            [tables]="[
+                {title: 'Name', value: country.name},
+                {title: 'Capital', value: country.capital},
+                {title: 'Code', value: country.code},
+                {title: 'Phone', value: country.phone},
+                {title: 'Currency', value: country.currency},
+                {title: 'Native', value: country.native},
+                {title: 'Emoji', value: country.emoji},
+                {title: 'EmojiU', value: country.emojiU},
+                {title: 'Continent', value: country.continent?.name},
+            ]"
+        >
+        </app-table>
+        <app-info [info]="[{title: 'Languages', data: country.languages}]"></app-info>
+        <app-info [info]="[{title: 'States', data: country.states}]"></app-info>
+    </div>
+</div>
+

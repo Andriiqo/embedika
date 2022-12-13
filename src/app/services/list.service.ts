@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Apollo, ApolloBase, gql } from 'apollo-angular';
+import { Apollo, ApolloBase } from 'apollo-angular';
+import { GET_COUNTRIES_LIST } from '../gql/list';
 
 @Injectable({
   providedIn: 'root'
@@ -13,18 +14,7 @@ export class ListService {
 
   getList(): any {
     return this.apollo.query({
-      query: gql`
-        {
-          countries {
-            code
-            name
-            continent {
-              name
-            }
-            phone
-          }
-        }
-      `
+      query: GET_COUNTRIES_LIST,
     })
   }
 }

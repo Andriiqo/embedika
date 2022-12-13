@@ -12,6 +12,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { CardComponent } from './components/card/card.component';
 import { InMemoryCache } from '@apollo/client/core';
 import { TableComponent } from './components/table/table.component';
+import { InfoComponent } from './components/info/info.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { TableComponent } from './components/table/table.component';
     SidebarComponent,
     CardComponent,
     TableComponent,
+    InfoComponent,
   ],
   imports: [
     BrowserModule,

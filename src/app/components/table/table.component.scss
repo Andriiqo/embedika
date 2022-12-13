@@ -6,13 +6,13 @@
     justify-content: flex-start;
 
     &__value {
-        width: 300px;
+        min-width: 18rem;
         display: flex;
         flex-wrap: wrap;
     }
 
     &__name {
-        margin-right: 6.5rem;
+        width: 6.25rem;
     }
 
     &__info {

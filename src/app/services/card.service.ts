@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Apollo, ApolloBase, gql } from 'apollo-angular';
+import { Apollo, ApolloBase } from 'apollo-angular';
+import { GET_COUNTRY_BY_ID } from '../gql/list';
 
 @Injectable({
   providedIn: 'root'
@@ -14,13 +15,7 @@ export class CardService {
 
   getCard(id: string): any {
     return this.apollo.query({
-      query: gql`
-        query country($code: ID!) {
-          country(code: $code) {
-            name
-          }
-        }
-      `,
+      query: GET_COUNTRY_BY_ID,
       variables: {
         code: id
       }

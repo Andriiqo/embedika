@@ -1,0 +1,4 @@
+<div class="info" *ngFor="let item of info">
+    <p class="info__title">{{item.title}}</p>
+    <span class="info__elem" *ngFor="let value of item.data">{{value.name}}, </span>
+</div>
