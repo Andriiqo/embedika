@@ -30,3 +30,10 @@ export type Continent = {
     name?: String;
     countries?: Country[];
 }
+
+export interface CoutryRespons {
+    code?: string
+    name?: string
+    phone?: string
+    continent?: string
+  }

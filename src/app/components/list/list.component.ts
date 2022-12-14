@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ListService } from 'src/app/services/list.service';
-import { Country } from 'src/app/types/Country.types';
+import { CoutryRespons } from 'src/app/types/Country.types';
 
 @Component({
   selector: 'app-list',
@@ -12,13 +12,16 @@ export class ListComponent implements OnInit {
   constructor(private listService: ListService) {}
 
   loading = true
-  countries: Country[] = []
+  countries: CoutryRespons[] = []
   error: null | string = null
 
   ngOnInit(): void {
-    this.listService.getList().subscribe(({data}: Record<string, Country[]>) => {
-      // @ts-ignore
-      this.countries = data.countries;
+    this.listService.getList().subscribe(({data}: any) => {
+      data.continents.forEach((item: any) => {
+        item.countries.forEach((country: CoutryRespons) => {
+          this.countries.push({...country, continent: item.name})
+        });
+      })
       this.loading = false;
     })
   }

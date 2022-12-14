@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpLink } from 'apollo-angular/http';
 import { BrowserModule } from '@angular/platform-browser';
-import { ApolloModule, APOLLO_NAMED_OPTIONS, APOLLO_OPTIONS, NamedOptions } from 'apollo-angular';
+import { ApolloModule, APOLLO_NAMED_OPTIONS } from 'apollo-angular';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,9 +10,11 @@ import { ListComponent } from './components/list/list.component';
 import { ItemComponent } from './components/item/item.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { CardComponent } from './components/card/card.component';
-import { InMemoryCache } from '@apollo/client/core';
+
 import { TableComponent } from './components/table/table.component';
 import { InfoComponent } from './components/info/info.component';
+import { apolloFactoryCountries } from './provides/countries';
+import { FilterComponent } from './components/filter/filter.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,7 @@ import { InfoComponent } from './components/info/info.component';
     CardComponent,
     TableComponent,
     InfoComponent,
+    FilterComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,16 +36,7 @@ import { InfoComponent } from './components/info/info.component';
   providers: [
     {
       provide: APOLLO_NAMED_OPTIONS,
-      useFactory(httpLink: HttpLink): NamedOptions {
-        return {
-          list: {
-            cache: new InMemoryCache(),
-            link: httpLink.create({
-              uri: 'https://countries.trevorblades.com'
-            })
-          }
-        }
-      },
+      useFactory: apolloFactoryCountries,
       deps: [HttpLink]
     }
   ],

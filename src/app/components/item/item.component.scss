@@ -21,7 +21,7 @@
         min-height: 0.7rem;
         border-right: 0.125rem solid;
         border-bottom: 0.125rem solid;
-        border-color: var(--color-form-control-active);
+        border-color: var(--color-third);
         transform: rotate(315deg);
 
         &::before {
@@ -30,7 +30,7 @@
             top: 0.275rem;
             width: 0.7rem;
             height: 0.125rem;
-            background-color: var(--color-form-control-active);
+            background-color: var(--color-third);
             transform: rotate(45deg);
         }
     }
