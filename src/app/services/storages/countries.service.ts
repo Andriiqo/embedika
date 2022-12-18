@@ -13,7 +13,13 @@ export class CountriesService {
   private dataSubject: BehaviorSubject<never[]> = new BehaviorSubject([]);
   data$: Observable<Country[]> = this.dataSubject.asObservable();
 
+  private loadingSubject: BehaviorSubject<boolean> = new BehaviorSubject(true);
+  loading$: Observable<boolean> = this.loadingSubject.asObservable();
+
   setData() {
-    this.listService.getList().subscribe(({data}: any) => this.dataSubject.next(data.countries))
+    this.listService.getList().subscribe(({data}: any) => {
+      this.dataSubject.next(data.countries)
+      this.loadingSubject.next(false);
+    })
   }
 }

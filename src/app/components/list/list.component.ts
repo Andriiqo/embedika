@@ -1,5 +1,5 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
+import { Observable} from 'rxjs';
 import { CountriesService } from 'src/app/services/storages/countries.service';
 import { Country } from 'src/app/types/Country.types';
 
@@ -8,23 +8,17 @@ import { Country } from 'src/app/types/Country.types';
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.scss'],
 })
-export class ListComponent implements OnInit, OnDestroy  {
+export class ListComponent implements OnInit {
 
-  filteredCountries: Country[] = [];
-  subscription: Subscription;
+  filteredCountries$: Observable<Country[]>;
+  loading$: Observable<boolean> ;
 
   constructor(private countriesService: CountriesService) {
-    this.subscription = this.countriesService.data$.subscribe(data => this.filteredCountries = data)
+    this.filteredCountries$ = this.countriesService.data$
+    this.loading$ = this.countriesService.loading$
   }
-
+  
   ngOnInit(): void {
     this.countriesService.setData()
   }
-
-  ngOnDestroy(): void {
-    if (this.subscription !== null) {
-      this.subscription.unsubscribe();
-    }
-  }
-  
 }
