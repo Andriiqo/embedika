@@ -1,9 +1,9 @@
 <div class="wrapper">
     <main class="container list">
         <h1 class="list__title">Country list</h1>
-        <div *ngIf="loading">Loading...</div>
-        <div *ngIf="error">Error</div>
-        <div *ngFor="let country of countries">
+        <!-- <div *ngIf="loading">Loading...</div>
+        <div *ngIf="error">Error</div> -->
+        <div *ngFor="let country of filteredCountries">
             <app-item [country]="country"></app-item>
         </div>
     </main>

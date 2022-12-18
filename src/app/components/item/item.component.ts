@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { CoutryRespons } from 'src/app/types/Country.types';
+import { Country } from 'src/app/types/Country.types';
 
 @Component({
   selector: 'app-item',
@@ -7,5 +7,5 @@ import { CoutryRespons } from 'src/app/types/Country.types';
   styleUrls: ['./item.component.scss']
 })
 export class ItemComponent {
-  @Input() country: CoutryRespons = {};
+  @Input() country: Country = {};
 }

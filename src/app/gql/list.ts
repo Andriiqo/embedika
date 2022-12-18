@@ -1,14 +1,14 @@
 import { gql } from "apollo-angular";
 
 export const GET_COUNTRIES_LIST = gql`
-query ($filter: ContinentFilterInput) {
-  continents(filter: $filter) {
+query ($filter: CountryFilterInput) {
+  countries(filter: $filter) {
     code
     name
-    countries {
+    phone
+    continent {
       code
       name
-      phone
     }
   }
 }

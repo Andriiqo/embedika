@@ -1,1 +1,7 @@
-<input class="input" type="text" placeholder="Название">
+<input
+    [(ngModel)]="query"
+    (keyup)="onChangeSearch($event)"
+    class="input" 
+    type="text" 
+    placeholder="Название"
+>

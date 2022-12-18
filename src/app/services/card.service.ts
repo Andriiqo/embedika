@@ -13,11 +13,11 @@ export class CardService {
     this.apollo = this.apolloProvider.use('list')
   }
 
-  getCard(id: string): any {
+  getCard(code: string): any {
     return this.apollo.query({
       query: GET_COUNTRY_BY_ID,
       variables: {
-        code: id
+        code
       }
     })
   }

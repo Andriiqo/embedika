@@ -12,13 +12,13 @@ export class ListService {
     this.apollo = this.apolloProvider.use('list')
   }
 
-  getList(): any {
+  getList(filterNotIn: string[] = ['']) {
     return this.apollo.query({
       query: GET_COUNTRIES_LIST,
       variables: {
         filter: {
           code: {
-            in: "EU"
+            nin: filterNotIn
           }
         }
       }

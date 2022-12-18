@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpLink } from 'apollo-angular/http';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import { ApolloModule, APOLLO_NAMED_OPTIONS } from 'apollo-angular';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -28,6 +29,7 @@ import { FilterComponent } from './components/filter/filter.component';
     FilterComponent,
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
     ApolloModule,

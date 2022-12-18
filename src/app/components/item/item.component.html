@@ -6,7 +6,7 @@
     <app-table 
         [ngStyle]="{'width': '100%', 'display':'flex', 'flex': '1 0 auto'}"
         [tables]="[
-            {title: 'Continent', value: country.continent},
+            {title: 'Continent', value: country.continent?.name},
             {title: 'Phone', value: country.phone}
         ]"
     >
