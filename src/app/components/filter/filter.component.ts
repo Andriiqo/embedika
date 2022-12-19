@@ -9,7 +9,7 @@ import { FilterService } from 'src/app/services/filter.service';
 export class FilterComponent {
   search: string;
 
-  constructor(public filterServices: FilterService) {
-    this.search = this.filterServices.search;
+  constructor(public filterService: FilterService) {
+    this.search = this.filterService.search
   }
 }

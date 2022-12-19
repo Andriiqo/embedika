@@ -1,4 +1,5 @@
 export enum ALL_CONTINETS {
+    "1_ALL" = 'Все',
     "AF"= 'Африка', 
     "AN"= 'Антарктика', 
     "AS"= 'Азия', 

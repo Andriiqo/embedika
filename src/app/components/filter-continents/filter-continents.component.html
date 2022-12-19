@@ -1,0 +1,18 @@
+<div class="filter">
+    <h4 class="filter__title">Континент</h4>
+    <div
+        *ngFor="let continent of listContinents | keyvalue"
+        class="filter__item"
+    >
+        <input
+            (click)="filterService.continentsFilter(continent.key)"
+            class="filter__input"
+            type="radio" 
+            name="continent" 
+            id={{continent.key}}
+        >
+        <label class="filter__label" for={{continent.key}}>
+            <span>{{continent.value}}</span>
+        </label>
+    </div>
+</div>

@@ -18,6 +18,7 @@ import { apolloFactoryCountries } from './provides/countries';
 import { FilterComponent } from './components/filter/filter.component';
 import { FilterCountriesNamePipe } from './pipes/filter-countries-name.pipe';
 import { FilterCountriesContinentPipe } from './pipes/filter-countries-continent.pipe';
+import { FilterContinentsComponent } from './components/filter-continents/filter-continents.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { FilterCountriesContinentPipe } from './pipes/filter-countries-continent
     FilterComponent,
     FilterCountriesNamePipe,
     FilterCountriesContinentPipe,
+    FilterContinentsComponent,
   ],
   imports: [
     FormsModule,

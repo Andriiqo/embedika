@@ -11,6 +11,7 @@ import { Country } from 'src/app/types/Country.types';
 })
 export class ListComponent implements OnInit {
 
+  selectContinent: string;
   contries$: Observable<Country[]>;
   loading$: Observable<boolean>;
 
@@ -18,6 +19,7 @@ export class ListComponent implements OnInit {
       private countriesService: CountriesService,
       public filterServices: FilterService
     ) {
+    this.selectContinent = this.filterServices.selectContinent
     this.contries$ = this.countriesService.data$
     this.loading$ = this.countriesService.loading$
   }

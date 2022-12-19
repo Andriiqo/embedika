@@ -4,7 +4,10 @@
         <div *ngIf="loading$ | async">Loading...</div>
         <!-- <div *ngIf="error">Error</div> -->
         <div *ngIf="contries$ | async as contries">
-            <div *ngFor="let country of contries | filterCountriesName: filterServices.search">
+            <div *ngFor="let country of contries 
+                | filterCountriesContinent: filterServices.selectContinent 
+                | filterCountriesName: filterServices.search"
+            >
                 <app-item [country]="country"></app-item>
             </div>
         </div>
