@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable} from 'rxjs';
+import { filter, Observable} from 'rxjs';
 import { CountriesService } from 'src/app/services/storages/countries.service';
 import { Country } from 'src/app/types/Country.types';
 
@@ -11,14 +11,14 @@ import { Country } from 'src/app/types/Country.types';
 export class ListComponent implements OnInit {
 
   filteredCountries$: Observable<Country[]>;
-  loading$: Observable<boolean> ;
+  loading$: Observable<boolean>;
 
-  constructor(private countriesService: CountriesService) {
+  constructor(public countriesService: CountriesService) {
     this.filteredCountries$ = this.countriesService.data$
     this.loading$ = this.countriesService.loading$
   }
   
   ngOnInit(): void {
-    this.countriesService.setData()
+    this.countriesService.setData();
   }
 }

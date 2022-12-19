@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component } from '@angular/core';
+import { CountriesService } from 'src/app/services/storages/countries.service';
 
 @Component({
   selector: 'app-filter',
@@ -6,15 +7,9 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrls: ['./filter.component.scss']
 })
 export class FilterComponent {
-  
-  query: string = '';
+  search: string;
 
-  @Output() onQuery: EventEmitter<string> = new EventEmitter();
-
-  constructor() {}
-
-    public onChangeSearch(event: KeyboardEvent) {
-        // this.onQuery.emit(this.query)
-        console.log(event)
-    }
+  constructor(public countriesService: CountriesService) {
+    this.search = this.countriesService.search;
+  }
 }

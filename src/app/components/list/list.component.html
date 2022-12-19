@@ -3,8 +3,10 @@
         <h1 class="list__title">Country list</h1>
         <div *ngIf="loading$ | async">Loading...</div>
         <!-- <div *ngIf="error">Error</div> -->
-        <div *ngFor="let country of filteredCountries$ | async">
-            <app-item [country]="country"></app-item>
+        <div *ngIf="filteredCountries$ | async as filteredCountries">
+            <div *ngFor="let country of filteredCountries | filterCountriesName: countriesService.search ">
+                <app-item [country]="country"></app-item>
+            </div>
         </div>
     </main>
     <app-sidebar></app-sidebar>

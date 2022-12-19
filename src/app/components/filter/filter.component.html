@@ -1,6 +1,6 @@
 <input
-    [(ngModel)]="query"
-    (keyup)="onChangeSearch($event)"
+    [ngModel]="search"
+    (ngModelChange)="countriesService.searchFilter($event)"
     class="input" 
     type="text" 
     placeholder="Название"

@@ -16,6 +16,7 @@ import { TableComponent } from './components/table/table.component';
 import { InfoComponent } from './components/info/info.component';
 import { apolloFactoryCountries } from './provides/countries';
 import { FilterComponent } from './components/filter/filter.component';
+import { FilterCountriesNamePipe } from './pipes/filter-countries-name.pipe';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { FilterComponent } from './components/filter/filter.component';
     TableComponent,
     InfoComponent,
     FilterComponent,
+    FilterCountriesNamePipe,
   ],
   imports: [
     FormsModule,
