@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CountriesService } from 'src/app/services/storages/countries.service';
+import { FilterService } from 'src/app/services/filter.service';
 
 @Component({
   selector: 'app-filter',
@@ -9,7 +9,7 @@ import { CountriesService } from 'src/app/services/storages/countries.service';
 export class FilterComponent {
   search: string;
 
-  constructor(public countriesService: CountriesService) {
-    this.search = this.countriesService.search;
+  constructor(public filterServices: FilterService) {
+    this.search = this.filterServices.search;
   }
 }
