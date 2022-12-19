@@ -1,19 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { CardService } from 'src/app/services/card.service';
+import { CardService } from 'src/app/services/api/card.service';
 import { Country } from 'src/app/types/Country.types';
 
 @Component({
-  selector: 'app-card',
-  templateUrl: './card.component.html',
-  styleUrls: ['./card.component.scss'],
+  selector: 'app-country',
+  templateUrl: './country.component.html',
+  styleUrls: ['./country.component.scss'],
   providers: [CardService],
 })
-export class CardComponent implements OnInit {
+export class CountryComponent implements OnInit {
   id: string;
   country: Country = {};
 
-  constructor(private activateRoute: ActivatedRoute, private cardService: CardService) {
+  constructor(activateRoute: ActivatedRoute, private cardService: CardService) {
       this.id = activateRoute.snapshot.params['id']
   }
 

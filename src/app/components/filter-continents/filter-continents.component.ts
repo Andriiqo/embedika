@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ALL_CONTINETS } from 'src/app/const/continents';
-import { FilterService } from 'src/app/services/filter.service';
+import { FilterService } from 'src/app/services/ui/filter.service';
 
 @Component({
   selector: 'app-filter-continents',

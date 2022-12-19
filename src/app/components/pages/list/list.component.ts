@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable} from 'rxjs';
-import { FilterService } from 'src/app/services/filter.service';
+import { FilterService } from 'src/app/services/ui/filter.service';
 import { CountriesService } from 'src/app/services/storages/countries.service';
 import { Country } from 'src/app/types/Country.types';
 

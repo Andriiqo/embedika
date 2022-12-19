@@ -1,7 +1,7 @@
 <div class="card">
     <div class="card__header">
         <h3 class="card__title">{{country.name}}</h3>
-        <a [routerLink]="['card', country.code]" class="card__arrow"></a>
+        <a [routerLink]="['country', country.code]" class="card__arrow"></a>
     </div>
     <app-table 
         [ngStyle]="{'width': '100%', 'display':'flex', 'flex': '1 0 auto'}"

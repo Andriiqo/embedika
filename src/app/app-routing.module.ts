@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CardComponent } from './components/card/card.component';
-import { ListComponent } from './components/list/list.component';
+import { CountryComponent } from './components/pages/country/country.component';
+import { ListComponent } from './components/pages/list/list.component';
+
 
 const routes: Routes = [
   {title: 'List', path: '', component: ListComponent},
-  {title: 'Card', path: 'card/:id', component: CardComponent},
+  {title: 'Country', path: 'country/:id', component: CountryComponent},
   { path: '**', redirectTo: '/'}
 ];
 

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Apollo, ApolloBase } from 'apollo-angular';
-import { GET_COUNTRY_BY_ID } from '../gql/list';
+import { GET_COUNTRY_BY_ID } from 'src/app/gql/list';
 
 @Injectable({
   providedIn: 'root'

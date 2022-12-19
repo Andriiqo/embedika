@@ -7,10 +7,10 @@ import { ApolloModule, APOLLO_NAMED_OPTIONS } from 'apollo-angular';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ListComponent } from './components/list/list.component';
+
 import { ItemComponent } from './components/item/item.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { CardComponent } from './components/card/card.component';
+import { CountryComponent } from './components/pages/country/country.component';
 
 import { TableComponent } from './components/table/table.component';
 import { InfoComponent } from './components/info/info.component';
@@ -19,6 +19,7 @@ import { FilterComponent } from './components/filter/filter.component';
 import { FilterCountriesNamePipe } from './pipes/filter-countries-name.pipe';
 import { FilterCountriesContinentPipe } from './pipes/filter-countries-continent.pipe';
 import { FilterContinentsComponent } from './components/filter-continents/filter-continents.component';
+import { ListComponent } from './components/pages/list/list.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { FilterContinentsComponent } from './components/filter-continents/filter
     ListComponent,
     ItemComponent,
     SidebarComponent,
-    CardComponent,
+    CountryComponent,
     TableComponent,
     InfoComponent,
     FilterComponent,

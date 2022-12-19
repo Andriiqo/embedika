@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, filter, map, Observable } from 'rxjs';
 import { Country } from 'src/app/types/Country.types';
-import { ListService } from '../list.service';
+import { ListService } from '../api/list.service';
 
 @Injectable({
   providedIn: 'root'
