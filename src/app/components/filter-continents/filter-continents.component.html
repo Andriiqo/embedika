@@ -5,6 +5,7 @@
         class="filter__item"
     >
         <input
+            (select)="activeRadioButton === continent.value ? true : false"
             (click)="filterService.continentsFilter(continent.key)"
             class="filter__input"
             type="radio" 
